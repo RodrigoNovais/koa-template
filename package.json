@@ -1,0 +1,14 @@
+{
+    "name": "koa-template",
+    "version": "0.0.1",
+    "description": "Koa RESTful API application template",
+    "main": "src/server.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "koa", "koa2", "rest", "restful", "api", "typescript", "template", "skeleton"
+    ],
+    "author": "rodrigo novais <roo.novais@gmail.com>",
+    "license": "ISC"
+}
