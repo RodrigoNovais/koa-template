@@ -1,18 +1,12 @@
-import Koa, { Context, Next } from 'koa'
-import Router from 'koa-router'
+import Koa from 'koa'
 
 import bodyparser from 'koa-bodyparser'
 import cors from 'koa2-cors'
 
+import routes from './routes'
 import { PORT } from './config'
 
 const app = new Koa()
-const routes = new Router()
-
-routes.get('/', async (context: Context, next: Next) => {
-    context.status = 200
-    return next()
-})
 
 app.use(cors())
 app.use(bodyparser())
