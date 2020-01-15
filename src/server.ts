@@ -4,6 +4,8 @@ import Router from 'koa-router'
 import bodyparser from 'koa-bodyparser'
 import cors from 'koa2-cors'
 
+import { PORT } from './config'
+
 const app = new Koa()
 const routes = new Router()
 
@@ -17,4 +19,4 @@ app.use(bodyparser())
 app.use(routes.routes())
 app.use(routes.allowedMethods())
 
-app.listen(3000)
+app.listen(PORT)
