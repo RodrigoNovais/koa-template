@@ -10,7 +10,6 @@ const app = new Koa()
 
 app.use(cors())
 app.use(bodyparser())
-app.use(routes.routes())
-app.use(routes.allowedMethods())
+app.use(routes)
 
 app.listen(PORT)

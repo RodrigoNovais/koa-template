@@ -1,11 +1,20 @@
-import { Context, Next } from 'koa'
+import compose from 'koa-compose'
 import Router from 'koa-router'
 
-const routes = new Router()
+import welcome from './welcome'
 
-routes.get('/', async (context: Context, next: Next) => {
-    context.status = 200
-    return next()
-})
+function combine(...routers: Router[]) {
+    if (!Array.isArray(routers))
+        routers = [...arguments]
 
-export default routes
+    const middleware: Array<any> = []
+
+    routers.forEach(router => {
+        middleware.push(router.routes())
+        middleware.push(router.allowedMethods())
+    })
+
+    return compose(middleware)
+}
+
+export default combine(welcome)
