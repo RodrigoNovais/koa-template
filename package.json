@@ -1,11 +1,11 @@
 {
     "name": "koa-template",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Koa RESTful API application template",
     "main": "src/server.ts",
     "scripts": {
         "build": "tsc",
-        "dev": "nodemon --watch \"src/\" --exec \"ts-node src/server.ts\" -e ts",
+        "start": "nodemon --watch \"src/\" --exec \"ts-node -r dotenv/config src/server.ts\" -e ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -27,6 +27,7 @@
         "@types/koa2-cors": "^2.0.1",
         "@typescript-eslint/eslint-plugin": "^2.16.0",
         "@typescript-eslint/parser": "^2.16.0",
+        "dotenv": "^8.2.0",
         "eslint": "^6.8.0",
         "nodemon": "^2.0.2",
         "ts-node": "^8.6.2",
@@ -34,7 +35,6 @@
         "typescript": "^3.7.4"
     },
     "dependencies": {
-        "dotenv": "^8.2.0",
         "koa": "^2.11.0",
         "koa-bodyparser": "^4.2.1",
         "koa-compose": "^4.1.0",
