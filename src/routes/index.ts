@@ -1,5 +1,5 @@
 import compose from 'koa-compose'
-import Router from 'koa-router'
+import Router from '@koa/router'
 
 function combine(...routers: Router[]) {
     if (!Array.isArray(routers))
