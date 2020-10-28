@@ -5,7 +5,7 @@
     "main": "src/server.ts",
     "scripts": {
         "build": "tsc",
-        "start": "nodemon --watch \"src/\" --exec \"ts-node -r dotenv/config src/server.ts\" -e ts",
+        "start": "tsnd --transpile-only --ignore-watch node_modules --respawn -r dotenv/config src/server.ts",
         "test": "jest --coverage --watchAll"
     },
     "keywords": [
@@ -33,10 +33,8 @@
         "eslint": "^6.8.0",
         "eslint-plugin-security": "^1.4.0",
         "jest": "^25.5.4",
-        "nodemon": "^2.0.4",
         "ts-jest": "^25.5.1",
-        "ts-node": "^8.10.2",
-        "tsc": "^1.20150623.0",
+        "ts-node-dev": "^1.0.0",
         "typescript": "^3.9.7"
     },
     "dependencies": {
